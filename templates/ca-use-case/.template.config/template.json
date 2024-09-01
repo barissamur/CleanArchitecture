@@ -76,14 +76,14 @@
           "condition": "(createCommand)",
           "exclude": [
             "FeatureName/Queries/**/*",
-            "FeatureName/Endpoints/**/*"
+            "FeatureName/CleanArchitectureUseCase/**/*"
           ]
         },
         {
           "condition": "(createQuery)",
           "exclude": [
             "FeatureName/Commands/**/*",
-            "FeatureName/Endpoints/**/*"
+            "FeatureName/CleanArchitectureUseCase/**/*"
           ]
         },
         {
