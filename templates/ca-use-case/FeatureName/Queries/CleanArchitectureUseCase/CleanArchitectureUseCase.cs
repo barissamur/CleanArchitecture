@@ -27,10 +27,10 @@ public class CleanArchitectureUseCaseQueryConsumer : IConsumer<CleanArchitecture
         _dbcontext = dbcontext;
     }
 
-    public Task Consume(ConsumeContext<CleanArchitectureUseCaseQuery> context)
+    public async Task Consume(ConsumeContext<CleanArchitectureUseCaseQuery> context)
     {
-        var command = context.Message;
+        var query = context.Message;
 
-        return context.RespondAsync(new CleanArchitectureUseCaseResponse());
+        await context.RespondAsync(new CleanArchitectureUseCaseResponse());
     }
 }
