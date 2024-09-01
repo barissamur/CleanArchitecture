@@ -56,6 +56,8 @@ public class ValidationFilter<TMessage> : IFilter<ConsumeContext<TMessage>> wher
             if (failures.Count != 0)
             {
                 await context.RespondAsync(CustomResult.Failure(failures.Select(f => f.ErrorMessage)));
+
+                return;
             }
         }
 
