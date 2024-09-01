@@ -1,4 +1,6 @@
-﻿using MassTransit;
+﻿using CleanArchitecture.Application.Common.Models;
+using MassTransit;
+using Microsoft.Extensions.DependencyInjection;
 using ValidationException = CleanArchitecture.Application.Common.Exceptions.ValidationException;
 
 namespace CleanArchitecture.Application.Common.Behaviours;
