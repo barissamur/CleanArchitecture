@@ -16,11 +16,11 @@ public class CleanArchitectureUseCaseCommandValidator : AbstractValidator<CleanA
 
 public class CleanArchitectureUseCaseCommandConsumer : IConsumer<CleanArchitectureUseCaseCommand>
 {
-    private readonly IApplicationDbContext _context;
+    private readonly IApplicationDbContext _dbcontext;
 
-    public CleanArchitectureUseCaseCommandConsumer(IApplicationDbContext context)
+    public CleanArchitectureUseCaseCommandConsumer(IApplicationDbContext dbcontext)
     {
-        _context = context;
+        _dbcontext = dbcontext;
     }
 
     public Task Consume(ConsumeContext<CleanArchitectureUseCaseCommand> context)

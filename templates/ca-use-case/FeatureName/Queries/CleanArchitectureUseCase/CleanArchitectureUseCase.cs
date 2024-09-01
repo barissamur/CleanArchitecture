@@ -20,11 +20,11 @@ public class CleanArchitectureUseCaseQueryValidator : AbstractValidator<CleanArc
 
 public class CleanArchitectureUseCaseQueryConsumer : IConsumer<CleanArchitectureUseCaseQuery>
 {
-    private readonly IApplicationDbContext _context;
+    private readonly IApplicationDbContext _dbcontext;
 
-    public CleanArchitectureUseCaseQueryConsumer(IApplicationDbContext context)
+    public CleanArchitectureUseCaseQueryConsumer(IApplicationDbContext dbcontext)
     {
-        _context = context;
+        _dbcontext = dbcontext;
     }
 
     public Task Consume(ConsumeContext<CleanArchitectureUseCaseQuery> context)
