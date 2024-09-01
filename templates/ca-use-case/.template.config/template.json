@@ -5,7 +5,7 @@
     "Clean Architecture"
   ],
   "name": "Clean Architecture Solution Use Case",
-  "description":  "Create a new use case (query or command)",
+  "description": "Create a new use case (query or command)",
   "identity": "Clean.Architecture.Solution.UseCase.CSharp",
   "groupIdentity": "Clean.Architecture.Solution.UseCase",
   "shortName": "ca-usecase",
@@ -41,17 +41,25 @@
         {
           "choice": "query",
           "description": "Create a new query"
+        },
+        {
+          "choice": "api",
+          "description": "Create a new api endpoints"
         }
       ],
       "description": "The type of use case to create"
     },
     "createCommand": {
       "type": "computed",
-      "value": "(useCaseType == \"command\")"
+      "value": "(useCaseType == 'command')"
     },
     "createQuery": {
       "type": "computed",
-      "value": "(useCaseType == \"query\")"
+      "value": "(useCaseType == 'query')"
+    },
+    "createApiEndpoints": {
+      "type": "computed",
+      "value": "(useCaseType == 'api')"
     },
     "returnType": {
       "type": "parameter",
@@ -66,11 +74,24 @@
       "modifiers": [
         {
           "condition": "(createCommand)",
-          "exclude": [ "FeatureName/Queries/**/*" ]
+          "exclude": [
+            "FeatureName/Queries/**/*",
+            "FeatureName/Endpoints/**/*"
+          ]
         },
         {
           "condition": "(createQuery)",
-          "exclude": [ "FeatureName/Commands/**/*" ]
+          "exclude": [
+            "FeatureName/Commands/**/*",
+            "FeatureName/Endpoints/**/*"
+          ]
+        },
+        {
+          "condition": "(createApiEndpoints)",
+          "exclude": [
+            "FeatureName/Commands/**/*",
+            "FeatureName/Queries/**/*"
+          ]
         }
       ]
     }

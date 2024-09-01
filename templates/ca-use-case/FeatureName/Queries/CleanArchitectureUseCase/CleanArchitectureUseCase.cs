@@ -1,8 +1,13 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
+using MassTransit;
 
 namespace CleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUseCase;
 
-public record CleanArchitectureUseCaseQuery : IRequest<object>
+public record CleanArchitectureUseCaseQuery
+{
+}
+
+public class CleanArchitectureUseCaseResponse
 {
 }
 
@@ -13,17 +18,19 @@ public class CleanArchitectureUseCaseQueryValidator : AbstractValidator<CleanArc
     }
 }
 
-public class CleanArchitectureUseCaseQueryHandler : IRequestHandler<CleanArchitectureUseCaseQuery, object>
+public class CleanArchitectureUseCaseQueryConsumer : IConsumer<CleanArchitectureUseCaseQuery>
 {
     private readonly IApplicationDbContext _context;
 
-    public CleanArchitectureUseCaseQueryHandler(IApplicationDbContext context)
+    public CleanArchitectureUseCaseQueryConsumer(IApplicationDbContext context)
     {
         _context = context;
     }
 
-    public async Task<object> Handle(CleanArchitectureUseCaseQuery request, CancellationToken cancellationToken)
+    public Task Consume(ConsumeContext<CleanArchitectureUseCaseQuery> context)
     {
-        throw new NotImplementedException();
+        var command = context.Message;
+
+        return context.RespondAsync(new CleanArchitectureUseCaseResponse());
     }
 }
