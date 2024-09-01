@@ -17,6 +17,15 @@ The following prerequisites are required to build and run the solution:
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (latest version)
 - [Node.js](https://nodejs.org/) (latest LTS, only required if you are using Angular or React)
 
+- ipucu: sınıf adı, genel klasör adı, tip
+```
+dotnet new ca-usecase -n GetProductById -fn ProductsEnpoints -ut api -rt ProductVm
+dotnet new ca-usecase -n GetProductById -fn Products -ut query -rt ProductVm
+dotnet new ca-usecase -n CreateProducts -fn Products -ut command -rt ProductVm
+```
+
+
+
 The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/Clean.Architecture.Solution.Template):
 ```
 dotnet new install Clean.Architecture.Solution.Template::8.0.5

@@ -5,16 +5,24 @@ namespace CleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUse
 
 public record CleanArchitectureUseCaseQuery
 {
+    public int? Id { get; set; }
+    public string? Title { get; set; }
+
 }
 
 public class CleanArchitectureUseCaseResponse
 {
+    public string? Title { get; set; }
+
 }
 
 public class CleanArchitectureUseCaseQueryValidator : AbstractValidator<CleanArchitectureUseCaseQuery>
 {
     public CleanArchitectureUseCaseQueryValidator()
     {
+        RuleFor(v => v.Title)
+            .MaximumLength(5)
+            .NotEmpty();
     }
 }
 
