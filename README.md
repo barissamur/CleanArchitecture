@@ -67,7 +67,7 @@ dotnet new ca-usecase -n CreateProducts -fn Products -ut command -rt ProductVm
 
 Api oluştur:
 ```
-dotnet new ca-usecase -n GetProductById -fn ProductsEnpoints -ut api -rt ProductVm
+dotnet new ca-usecase -n GetProductById -fn Endpoints -ut api -rt ProductVm
 ```
 
 Config oluştur
