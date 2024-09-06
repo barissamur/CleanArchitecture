@@ -45,6 +45,10 @@
         {
           "choice": "api",
           "description": "Create a new api endpoints"
+        },
+        {
+          "choice": "cfg",
+          "description": "Create a new api endpoints"
         }
       ],
       "description": "The type of use case to create"
@@ -61,6 +65,10 @@
       "type": "computed",
       "value": "(useCaseType == 'api')"
     },
+    "createCfg": {
+      "type": "computed",
+      "value": "(useCaseType == 'cfg')"
+    },
     "returnType": {
       "type": "parameter",
       "datatype": "string",
@@ -76,20 +84,31 @@
           "condition": "(createCommand)",
           "exclude": [
             "FeatureName/Queries/**/*",
-            "FeatureName/CleanArchitectureUseCase/**/*"
+            "FeatureName/Endpoints/**/*",
+            "FeatureName/Configurations/**/*",
           ]
         },
         {
           "condition": "(createQuery)",
           "exclude": [
             "FeatureName/Commands/**/*",
-            "FeatureName/CleanArchitectureUseCase/**/*"
+            "FeatureName/Configurations/**/*",
+            "FeatureName/Endpoints/**/*"
           ]
         },
         {
           "condition": "(createApiEndpoints)",
           "exclude": [
             "FeatureName/Commands/**/*",
+            "FeatureName/Configurations/**/*",
+            "FeatureName/Queries/**/*"
+          ]
+        },
+        {
+          "condition": "(createCfg)",
+          "exclude": [
+            "FeatureName/Commands/**/*",
+            "FeatureName/Endpoints/**/*",
             "FeatureName/Queries/**/*"
           ]
         }

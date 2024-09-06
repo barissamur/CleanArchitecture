@@ -39,6 +39,13 @@ public class CleanArchitectureUseCaseQueryConsumer : IConsumer<CleanArchitecture
     {
         var query = context.Message;
 
-        await context.RespondAsync(new CleanArchitectureUseCaseResponse());
+        CleanArchitectureUseCaseResponse response = new()
+        {
+            Title = query.Title,
+        };
+
+        var result = CustomResult.Success(response);
+
+        await context.RespondAsync(result);
     }
 }

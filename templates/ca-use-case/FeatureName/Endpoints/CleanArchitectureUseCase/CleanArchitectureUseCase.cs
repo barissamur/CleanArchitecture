@@ -12,10 +12,10 @@ public class CleanArchitectureUseCase : EndpointGroupBase
             .MapGet(GetCleanArchitectureUseCase);
     }
 
-    public async Task<CleanArchitectureUseCaseResponse> GetCleanArchitectureUseCase(IMediator mediator, [AsParameters] CleanArchitectureUseCaseQuery query)
+    public async Task<CustomResult> GetCleanArchitectureUseCase(IMediator mediator, [AsParameters] CleanArchitectureUseCaseQuery query)
     {
         var response = await mediator.CreateRequestClient<CleanArchitectureUseCaseQuery>()
-            .GetResponse<CleanArchitectureUseCaseResponse>(new());
+            .GetResponse<CustomResult>(query);
 
         return response.Message;
     }

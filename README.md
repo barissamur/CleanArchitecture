@@ -54,10 +54,25 @@ dotnet new ca-sln --help
 ```
 
 - ipucu: sınıf adı, genel klasör adı, tip
+
+Query oluştur:
+```
+dotnet new ca-usecase -n GetProductById -fn Products -ut query -rt ProductVm
+```
+ 
+Command oluştur:
+```
+dotnet new ca-usecase -n CreateProducts -fn Products -ut command -rt ProductVm
+```
+
+Api oluştur:
 ```
 dotnet new ca-usecase -n GetProductById -fn ProductsEnpoints -ut api -rt ProductVm
-dotnet new ca-usecase -n GetProductById -fn Products -ut query -rt ProductVm
-dotnet new ca-usecase -n CreateProducts -fn Products -ut command -rt ProductVm
+```
+
+Config oluştur
+```
+dotnet new ca-usecase -n Product -fn Data -ut cfg -rt ProductVm
 ```
 
 You can create use cases (commands or queries) by navigating to `./src/Application` and running `dotnet new ca-usecase`. Here are some examples:
