@@ -1,8 +1,8 @@
-﻿using NewPrj.Domain.Entities;
+﻿using CleanArchitecture.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace NewPrj.Infrastructure.Data.Configurations;
+namespace CleanArchitecture.Infrastructure.Data.Configurations;
 
 public class CleanArchitectureUseCaseConfiguration : IEntityTypeConfiguration<CleanArchitectureUseCase>
 {

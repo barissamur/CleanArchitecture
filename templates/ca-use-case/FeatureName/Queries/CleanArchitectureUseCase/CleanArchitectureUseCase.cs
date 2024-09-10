@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Application.Common.Models;
 using MassTransit;
 
 namespace CleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUseCase;

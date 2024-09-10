@@ -19,8 +19,8 @@
     "DefaultNamespace": {
       "type": "bind",
       "binding": "msbuild:RootNamespace",
-      "replaces": "CleanArchitecture.Application",
-      "defaultValue": "CleanArchitecture.Application"
+      "replaces": "CleanArchitecture",
+      "defaultValue": "CleanArchitecture"
     },
     "featureName": {
       "type": "parameter",
@@ -84,8 +84,8 @@
           "condition": "(createCommand)",
           "exclude": [
             "FeatureName/Queries/**/*",
-            "FeatureName/Endpoints/**/*",
-            "FeatureName/Configurations/**/*",
+            "FeatureName/CleanArchitectureUseCase/**/*",
+            "FeatureName/Configurations/**/*"
           ]
         },
         {
@@ -93,7 +93,7 @@
           "exclude": [
             "FeatureName/Commands/**/*",
             "FeatureName/Configurations/**/*",
-            "FeatureName/Endpoints/**/*"
+            "FeatureName/CleanArchitectureUseCase/**/*"
           ]
         },
         {
@@ -108,7 +108,7 @@
           "condition": "(createCfg)",
           "exclude": [
             "FeatureName/Commands/**/*",
-            "FeatureName/Endpoints/**/*",
+            "FeatureName/CleanArchitectureUseCase/**/*",
             "FeatureName/Queries/**/*"
           ]
         }
